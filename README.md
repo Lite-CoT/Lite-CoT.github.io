@@ -1,6 +1,9 @@
-# Let's Think Stage by Stage: Adapting Multi-stage Self-consistent Plan-and-Solve for ScienceQA
+# Lite-CoT: Lightweight Adapting Stage-wise Self-consistent Reasoning for ScienceQA
 
-Think-ScienceQA leverages a lightweight semantic adapter to align textual and visual modalities effectively. In addition, a multi-stage self-consistent CoT mechanism offers structured guidance for generating optimal rationales. Furthermore, a two-stage fine-tuning strategy enables the LLMs to first generate structured reasoning, and then perform accurate answer inference.
+
+
+Lite-CoT leverages a lightweight semantic adapter to align textual and visual modalities effectively. In addition, a stage-wise self-consistent CoT mechanism offers structured guidance for generating optimal rationales. Furthermore, a two-stage fine-tuning strategy enables the LLMs to first generate structured reasoning, and then perform accurate answer inference.
+
 
 ![pipline](Code/pipline.png)
 
@@ -20,7 +23,7 @@ pip install -r requirements.txt
 Download the dataset from the following repository:
 
 ```
-https://github.com/Think-ScienceQA/Think-ScienceQA.github.io/tree/master/data/
+https://github.com/Lite-CoT/Lite-CoT.github.io/tree/master/data/
 ```
 
 # Instructions
@@ -93,3 +96,4 @@ CUDA_VISIBLE_DEVICES=0,1 python main.py \
     --test_le models/rationale/predictions_ans_test.json \
     --evaluate_dir models/answer
 ```
+

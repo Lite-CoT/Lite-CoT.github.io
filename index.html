@@ -24,7 +24,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>Think-ScienceQA</title>
+  <title>Lite-CoT</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -52,8 +52,8 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Let’s Think During Reasoning: Adapting Stage-wise Self-consistent
-              Plan-and-Solve for ScienceQA</h1>
+            <h1 class="title is-1 publication-title">Lite-CoT: Lightweight Adapting Stage-wise
+              Self-consistent Reasoning for ScienceQA</h1>
 <!--            <div class="is-size-5 publication-authors">-->
 <!--              &lt;!&ndash; Paper authors &ndash;&gt;-->
 <!--              <span class="author-block">-->
@@ -161,7 +161,7 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
-         <p>Chain-of-Thought (CoT) prompting enhances reasoning but suffers from its single-path nature, often missing steps or causing semantic drift. Existing methods also struggle to effectively fuse multimodal information, limiting their capability on complex tasks like ScienceQA. To address this, we propose Think-ScienceQA, a stage-wise plan-and-solve framework with a semantic adapter. It generates multiple reasoning candidates and applies stage-wise self-consistency to select coherent answers. The lightweight semantic adapter bridges frozen visual encoders and language models for improved multimodal alignment. Despite using only 228M parameters (≈6% of the best fine-tuned model), Think-ScienceQA achieves state-of-the-art results on ScienceQA and A-OKVQA. Ablation studies show the planning and self-consistency modules contribute 6.7% and 4.1% performance gains, respectively.</p>
+         <p>Lite-CoT presents a compact solution for multimodal reasoning tasks by addressing limitations in how current Chain-of-Thought systems integrate visual and textual cues and sustain consistent inference. The method introduces a semantic alignment module that links fixed visual encoders with language models, alongside a staged self-consistency procedure that aggregates word-level signals from multiple candidate explanations to form stable reasoning traces. This structure allows the model to generate coherent rationales without relying on large-scale ensembles. With only 228M parameters, Lite-CoT attains 93.86% accuracy on ScienceQA, and reaches 61.7% direct-answer accuracy on A-OKVQA, surpassing many significantly larger baselines while using merely a small proportion of their parameter budget.</p>
         </div>
       </div>
     </div>
@@ -181,7 +181,7 @@
           <figure class="image">
             <img src="static/images/pipline.png" alt="Think-ScienceQA Pipeline Diagram">
             <figcaption class="has-text-centered mt-4">
-              The framework leverages a lightweight adapter for modality alignment and a stage-wise CoT process to generate and select reasoning candidates. A two-step tuning guides the model to produce structured rationales before inferring final answers.</figure>
+              The framework leverages a lightweight adapter for modality alignment and a stage-wise self-consistent CoT process to generate and select reasoning candidates. A two-step tuning guides the model to produce structured rationales before inferring final answers.</figure>
         </div>
       </div>
     </div>
@@ -228,9 +228,9 @@
           <!-- 文字描述 -->
           <div class="content has-text-justified mt-5">
             <p>
-              The scatter plot illustrates the strong performance–efficiency trade-off of Think-ScienceQA.
+              The scatter plot illustrates the strong performance–efficiency trade-off of Lite-CoT.
               The large variant achieves 95.59% accuracy, while the base model reaches 93.86%, both surpassing LLaVA (90.92%), LLaVA+GPT-4 (92.53%), and LLaMA-Adapter (85.19%).
-              Notably, Think-ScienceQA<sub>base</sub> outperforms the larger Multimodal-CoT<sub>large</sub> (91.68%), and Think-ScienceQA<sub>large</sub> achieves even better results with a comparable model size, emphasizing the framework’s scalability and reasoning strength without model over-expansion.
+              Notably, Lite-CoT<sub>base</sub> outperforms the larger Multimodal-CoT<sub>large</sub> (91.68%), and Lite-CoT<sub>large</sub> achieves even better results with a comparable model size, emphasizing the framework’s scalability and reasoning strength without model over-expansion.
             </p>
           </div>
 
@@ -256,7 +256,7 @@
                  alt="ScienceQA Overall Results"
                  style="max-height:90%; width:auto; max-width:90%;">
             <p class="has-text-centered mt-3">
-              Think-ScienceQA achieves SOTA with 95.59% accuracy (Large) and 93.86% (Base)
+              Lite-CoT achieves SOTA with 95.59% accuracy (Large) and 93.86% (Base)
             </p>
           </div>
 
@@ -299,12 +299,12 @@
   <section class="section">
     <div class="container is-max-desktop">
       <h2 class="title is-3">
-         A Comparative Evaluation of Baseline and Think-ScienceQA on Diverse Multimodal Tasks
+         A Comparative Evaluation of Baseline and Lite-CoT on Diverse Multimodal Tasks
       </h2>
 
       <div class="content has-text-centered mb-5">
         <p>
-          The figure below illustrates the comparative outputs of baseline and Think-ScienceQA in complex multimodal tasks,
+          The figure below illustrates the comparative outputs of baseline and Lite-CoT in complex multimodal tasks,
           highlighting the correctness achieved by the proposed method.
         </p>
       </div>
